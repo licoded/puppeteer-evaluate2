@@ -1,7 +1,7 @@
 {
-  "name": "puppeteer-evaluate2",
-  "version": "1.0.0-beta.1",
-  "description": "Easily create a js bundle for your puppeteer evaluate code.",
+  "name": "@licoded/puppeteer-evaluate2",
+  "version": "1.0.0",
+  "description": "Easily create a js/ts bundle for your puppeteer evaluate code.",
   "main": "./build/src/evaluate2.js",
   "scripts": {
     "build": "tsc",
@@ -10,7 +10,7 @@
     "test:coverage": "jest --coverage",
     "test": "jest"
   },
-  "author": "tmkn",
+  "author": "licoded",
   "license": "MIT",
   "dependencies": {
     "memory-fs": "^0.5.0",
