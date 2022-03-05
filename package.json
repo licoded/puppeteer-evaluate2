@@ -1,0 +1,26 @@
+{
+  "name": "@licoded/puppeteer-evaluate2",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "dev": "node --loader ts-node/esm --experimental-specifier-resolution=node ./app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/licoded/puppeteer-evaluate2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/licoded/puppeteer-evaluate2/issues"
+  },
+  "homepage": "https://github.com/licoded/puppeteer-evaluate2#readme",
+  "devDependencies": {
+    "@types/puppeteer": "^5.4.5",
+    "puppeteer": "^13.4.1"
+  }
+}
