@@ -35,6 +35,18 @@ test(`lodash Test`, async () => {
     server.close();
 });
 
+test(`Typescript With Dependency Test`, async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.goto('https://nodejs.org/en/');
+
+    let response = await evaluate2(page, _path(`./tests/code3.ts`));
+    expect(response).toEqual(['HOME', 'ABOUT', 'DOWNLOADS', 'DOCS', 'GET INVOLVED', 'SECURITY', 'CERTIFICATION', 'NEWS']);
+
+    await browser.close();
+});
+
 test(`Fail on missing JavaScript file`, async () => {
     expect.assertions(1);
 
