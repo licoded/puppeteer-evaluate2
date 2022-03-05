@@ -21,6 +21,8 @@
   "homepage": "https://github.com/licoded/puppeteer-evaluate2#readme",
   "devDependencies": {
     "@types/puppeteer": "^5.4.5",
-    "puppeteer": "^13.4.1"
+    "puppeteer": "^13.4.1",
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2"
   }
 }
