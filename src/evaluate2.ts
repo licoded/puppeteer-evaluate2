@@ -54,8 +54,8 @@ async function getJS(filePath: string): Promise<ICompilationResult> {
                     reject(err.stack || err);
                 }
 
-                const info = status.toJson();
-                if (status.hasErrors()) {
+                const info = status!.toJson();
+                if (status!.hasErrors()) {
                     reject(info.errors);
                 }
 
@@ -121,7 +121,7 @@ export function evaluate2<T = any>(page: puppeteer.Page, jsPath: string): Promis
                 )
             )
         } catch (e) {
-            console.log(e.message);
+            console.log((e as Error).message);
 
             reject(e);
         }
