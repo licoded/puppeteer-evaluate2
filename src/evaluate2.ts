@@ -28,6 +28,18 @@ async function getJS(filePath: string): Promise<ICompilationResult> {
             const compiler = webpack({
                 mode: "development",
                 entry: filePath,
+                module: {
+                    rules: [
+                        {
+                            test: /\.tsx?$/,
+                            use: 'ts-loader',
+                            exclude: /node_modules/,
+                        },
+                    ],
+                },
+                resolve: {
+                    extensions: ['.tsx', '.ts', '.js'],
+                },
                 output: {
                     library: uuid,
                     filename: uuid,
@@ -37,6 +49,7 @@ async function getJS(filePath: string): Promise<ICompilationResult> {
             compiler.outputFileSystem = memoryFs;
 
             compiler.run((err, status) => {
+
                 if (err) {
                     reject(err.stack || err);
                 }
@@ -101,16 +114,12 @@ export function evaluate2<T = any>(page: puppeteer.Page, jsPath: string): Promis
     return new Promise(async (resolve, reject) => {
         try {
             let { src, uuid } = await getJS(jsPath);
-            await page.addScriptTag({
-                content: src
-            });
-
             resolve(
                 page.evaluate(
-                    /* istanbul ignore next */ uuid => (window[uuid] as any).default(),
-                    uuid
+                    (code, uuid) => eval(`${code}${uuid}.default()`),
+                    src, uuid
                 )
-            );
+            )
         } catch (e) {
             console.log(e.message);
 
