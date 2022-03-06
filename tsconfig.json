@@ -15,13 +15,21 @@
       "*": [
         "node_modules/*",
       ],
+      "/@/*": [
+        "src/*"
+      ],
+      "/#/*": [
+        "utils/*"
+      ]
     },
   },
   "include": [
     "src/**/*",
+    "utils/**/*",
     "tests/**/*",
     "types/**/*.d.ts",
     "types/**/*.ts",
+    "utils",
   ],
   "files": [
     "jest.config.ts",

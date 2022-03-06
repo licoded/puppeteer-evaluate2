@@ -1,6 +1,6 @@
 import path from 'path';
-import getEvaluateFunc from '../../src/evaluate';
-import { run } from '../utils/puppeteer';
+import getEvaluateFunc from '/@/evaluate';
+import { run } from '/#/puppeteer';
 import sum from './sum';
 
 function _path(relativePath: string) {

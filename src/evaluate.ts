@@ -1,6 +1,6 @@
 import path from 'path';
 import puppeteer from 'puppeteer';
-import buildJsContent from './build';
+import buildJsContent from '/@/build';
 
 function _path(relativePath: string) {
   return path.resolve(relativePath);

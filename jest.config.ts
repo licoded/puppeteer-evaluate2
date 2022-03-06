@@ -20,4 +20,10 @@ export default {
 
   // Indicates whether each individual test should be reported during the run
   verbose: false,
+
+  // alias
+  moduleNameMapper: {
+    "/@/(.*)$": "<rootDir>/src/$1",
+    "/#/(.*)$": "<rootDir>/utils/$1",
+  },
 };
