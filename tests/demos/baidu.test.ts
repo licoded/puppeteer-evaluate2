@@ -1,7 +1,7 @@
 import path from 'path';
 import puppeteer from 'puppeteer';
 import getEvaluateFunc from '../../src/evaluate';
-import { run } from '../../src/puppeteer';
+import { run } from '../utils/puppeteer';
 import getBaiduTitle from './baidu';
 
 function _path(relativePath: string) {
