@@ -21,6 +21,8 @@ export default {
   // Indicates whether each individual test should be reported during the run
   verbose: false,
 
+  preset: 'jest-puppeteer',
+
   // alias
   moduleNameMapper: {
     "/@/(.*)$": "<rootDir>/src/$1",
