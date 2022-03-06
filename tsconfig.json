@@ -19,6 +19,9 @@
   },
   "include": [
     "src/**/*",
+    "tests/**/*",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
   ],
   "files": [
     "jest.config.ts",

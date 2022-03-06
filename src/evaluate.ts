@@ -2,8 +2,6 @@ import path from 'path';
 import puppeteer from 'puppeteer';
 import buildJsContent from './build';
 
-type IFunction = (...args: Array<any>) => any;
-
 function _path(relativePath: string) {
   return path.resolve(relativePath);
 }
