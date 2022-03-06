@@ -1,4 +1,8 @@
 type IFunction = (...args: Array<any>) => any;
+type IBuildRes = {
+  name: string;
+  code: string;
+}
 
 type UndefIndex<T extends any[], I extends number> = {
   [P in keyof T]: P extends Exclude<keyof T, keyof any[]> ? P extends `${I}` ? undefined : T[P] : T[P]
